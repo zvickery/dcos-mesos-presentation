@@ -1,0 +1,23 @@
+{
+  "description": "scheduled job example",
+  "id": "hello",
+  "labels": {
+    "destructive": "yes"
+  },
+  "run": {
+    "cpus": 0.25,
+    "mem": 512,
+    "disk": 0,
+    "docker": {
+      "image": "hello-world"
+    },
+    "env": {
+        "SOME_ENV_VAR": "foo"
+    },
+    "maxLaunchDelay": 600,
+    "restart": {
+      "activeDeadlineSeconds": 300,
+      "policy": "ON_FAILURE"
+    }
+  }
+}
