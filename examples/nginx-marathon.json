@@ -16,7 +16,6 @@
       ]
     }
   },
-  "acceptedResourceRoles": ["slave_public"],
   "healthChecks": [
     {
       "protocol": "COMMAND",
@@ -30,6 +29,9 @@
   "labels": {
     "DCOS_SERVICE_NAME": "nginx",
     "DCOS_SERVICE_SCHEME": "http",
-    "DCOS_SERVICE_PORT_INDEX": "0"
+    "DCOS_SERVICE_PORT_INDEX": "0",
+    "HAPROXY_GROUP": "external",
+    "HAPROXY_0_VHOST":"p1.dcos",
+    "HAPROXY_0_BALANCE":"leastconn"
   }
 }
